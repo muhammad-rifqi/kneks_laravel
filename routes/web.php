@@ -25,11 +25,11 @@ Route::post('login', [App\Http\Controllers\Auth\LoginController::class, 'login']
 Route::post('logout', [App\Http\Controllers\Auth\LoginController::class, 'logout'])->name('logout');
 
 // Registration Routes...
-//Route::get('register', [App\Http\Controllers\Auth\RegisterController::class,'showRegistrationForm'])->name('register');
-//Route::post('register', [App\Http\Controllers\Auth\RegisterController::class, 'register']);
-Route::get('register', function(){
-    return Redirect::to('/login');
-});
+Route::get('register', [App\Http\Controllers\Auth\RegisterController::class,'showRegistrationForm'])->name('register');
+Route::post('register', [App\Http\Controllers\Auth\RegisterController::class, 'register']);
+// Route::get('register', function(){
+//     return Redirect::to('/login');
+// });
 
 // Password Reset Routes...
 Route::get('password/reset', [App\Http\Controllers\Auth\ForgotPasswordController::class,'showLinkRequestForm'])->name('password.request');
